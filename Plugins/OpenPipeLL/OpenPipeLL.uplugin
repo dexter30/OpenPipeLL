@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "OpenPipeLL",
+	"Description": "mediapipe implementation",
+	"Category": "Other",
+	"CreatedBy": "Dexter30",
+	"CreatedByURL": "deandado.co.uk",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "OpenPipeLL",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

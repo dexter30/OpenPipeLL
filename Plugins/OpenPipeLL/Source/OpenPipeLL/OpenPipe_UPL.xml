@@ -1,0 +1,53 @@
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<prebuildCopies>
+		<copyDir src="$S(PluginDir)/Private/Java" dst="$S(BuildDir)/src/com/zetaflame/testhandmark/openPipeLlHelper" />
+		<copyDir src="$S(PluginDir)/Private/assets" dst="$S(BuildDir)/assets" />
+
+	</prebuildCopies>
+	<buildGradleAdditions>
+		<insert>
+			dependencies {
+
+			implementation fileTree(dir: 'libs', include: ['*.jar'])
+			implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0"
+			implementation "androidx.core:core:1.7.0"
+			implementation "androidx.core:core-ktx:1.7.0"
+			implementation "androidx.appcompat:appcompat:1.4.0"
+			implementation "androidx.window:window:1.0.0"
+			implementation "androidx.window:window-java:1.0.0"
+			implementation 'com.google.mediapipe:tasks-vision:0.10.11'
+			}
+
+			android{
+			compileOptions{
+			sourceCompatibility JavaVersion.VERSION_1_8
+			targetCompatibility JavaVersion.VERSION_1_8
+			}
+			}
+
+		</insert>
+	</buildGradleAdditions>
+	<gameActivityImportAdditions>
+		<insert>
+			<!-- package name of FoldableHelper -->
+			import com.zetaflame.testhandmark.openPipeLlHelper;
+		</insert>
+	</gameActivityImportAdditions>
+	<gameActivityClassAdditions>
+		<insert>
+			private openPipeLlHelper newOP = openPipeLlHelper.getInstance();
+		</insert>
+	</gameActivityClassAdditions>
+
+
+	<gameActivityOnCreateAdditions>
+		<insert>
+			//newOP = new openPipeLlHelper();
+			newOP.start(this);
+		</insert>
+	</gameActivityOnCreateAdditions>
+
+
+
+</root>
